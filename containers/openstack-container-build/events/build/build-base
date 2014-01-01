@@ -1,0 +1,26 @@
+#!/bin/bash
+
+CONTAINERNAME="add-base-to-openstack"
+BUILDDATE=$(date)
+
+echo "Starting to run $CONTAINERNAME build event"
+
+#TODO: Move this to the base  image
+#This is a little hack as /etc/init.d is not operational in a container
+dpkg-divert --local --rename --add /sbin/initctl
+ln -s /bin/true /sbin/initctl
+
+#TODO: I think this is already in the base image check and remove if needed
+apt-get install -y python-software-properties
+
+#Put repos here
+add-apt-repository cloud-archive:havana
+
+#Update index after adding repos from last section
+apt-get update
+
+echo $CONTAINERNAME >> /titanium/build-info
+echo $BUILDDATE >> /titanium/build-info
+
+echo "Finished running $CONTAINERNAME build event"
+

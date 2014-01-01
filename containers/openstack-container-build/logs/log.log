@@ -1,0 +1,439 @@
+Starting to build Container(titanium-openstack-120)
+Running build contaner (titanium-openstack-120)
+[2KStep 1 : FROM titanium-base-13
+[2K ---> 430cc44f97a2
+[2KStep 2 : MAINTAINER Keith Tobin <keith.tobin@gmail.com>
+[2K ---> Running in 1db64c154f32
+[2K ---> 487491ecb999
+[2KStep 3 : ADD ./events/build/build-base /titanium/events/build/build-base
+[2K ---> 41237b5fdb56
+[2KStep 4 : ADD ./events/build/build-mysql /titanium/events/build/build-mysql
+[2K ---> d2c124447530
+[2KStep 5 : ADD ./events/build/build-keystone /titanium/events/build/build-keystone
+[2K ---> 0f1583ab3b5e
+[2KStep 6 : ADD ./events/build/build-glance /titanium/events/build/build-glance
+[2K ---> 5cdd3ae56d29
+[2KStep 7 : ADD ./events/register/register-mysql /titanium/events/register/register-mysql
+[2K ---> 1c019d03172f
+[2KStep 8 : ADD ./events/register/register-keystone /titanium/events/register/register-keystone
+[2K ---> 3ec94304ecea
+[2KStep 9 : ADD ./events/register/register-glance /titanium/events/register/register-glance
+[2K ---> 12fafeb71484
+[2KStep 10 : RUN chmod 777 /titanium/events/build/*
+[2K ---> Running in f9b01710df24
+[2K ---> fc01ae70c7c5
+[2KStep 11 : RUN chmod 777 /titanium/events/register/*
+[2K ---> Running in 3e3e0bc7c776
+[2K ---> 9497d87fb36b
+[2KStep 12 : RUN /titanium/events/build/build-base
+[2K ---> Running in 3bf1d3c98d16
+[2KStarting to run add-base-to-openstack build event
+[2KLeaving 'local diversion of /sbin/initctl to /sbin/initctl.distrib'
+[2K[91mln: failed to create symbolic link `/sbin/initctl': File exists
+[0m[2KReading package lists...[2K
+[2KBuilding dependency tree...[2K
+Reading state information...[2K
+[2KThe following extra packages will be installed:
+  apt-utils ca-certificates file iso-codes krb5-locales libapt-inst1.4
+  libapt-pkg4.12 libasn1-8-heimdal libcurl3-gnutls libexpat1 libgcrypt11
+  libgnutls26 libgpg-error0 libgssapi-krb5-2 libgssapi3-heimdal
+  libhcrypto4-heimdal libheimbase1-heimdal libheimntlm0-heimdal
+  libhx509-5-heimdal libidn11 libk5crypto3 libkeyutils1 libkrb5-26-heimdal
+  libkrb5-3 libkrb5support0 libldap-2.4-2 libmagic1 libp11-kit0
+  libroken18-heimdal librtmp0 libsasl2-2 libsasl2-modules libsqlite3-0
+  libtasn1-3 libwind0-heimdal lsb-release mime-support openssl python
+  python-apt python-apt-common python-gnupginterface python-minimal
+  python-pycurl python2.7 python2.7-minimal ucf unattended-upgrades xz-lzma
+[2KSuggested packages:
+  isoquery rng-tools gnutls-bin krb5-doc krb5-user libsasl2-modules-otp
+  libsasl2-modules-ldap libsasl2-modules-sql libsasl2-modules-gssapi-mit
+  libsasl2-modules-gssapi-heimdal lsb python-doc python-tk python-apt-dbg
+  python-gtk2 python-vte python-apt-doc libcurl4-gnutls-dev python-pycurl-dbg
+  python2.7-doc binutils binfmt-support bsd-mailx
+[2KThe following NEW packages will be installed:
+  apt-utils ca-certificates file iso-codes krb5-locales libapt-inst1.4
+  libasn1-8-heimdal libcurl3-gnutls libexpat1 libgcrypt11 libgnutls26
+  libgpg-error0 libgssapi-krb5-2 libgssapi3-heimdal libhcrypto4-heimdal
+  libheimbase1-heimdal libheimntlm0-heimdal libhx509-5-heimdal libidn11
+  libk5crypto3 libkeyutils1 libkrb5-26-heimdal libkrb5-3 libkrb5support0
+  libldap-2.4-2 libmagic1 libp11-kit0 libroken18-heimdal librtmp0 libsasl2-2
+  libsasl2-modules libsqlite3-0 libtasn1-3 libwind0-heimdal lsb-release
+  mime-support openssl python python-apt python-apt-common
+  python-gnupginterface python-pycurl python-software-properties python2.7 ucf
+  unattended-upgrades xz-lzma
+[2KThe following packages will be upgraded:
+  libapt-pkg4.12 python-minimal python2.7-minimal
+[2K3 upgraded, 47 newly installed, 0 to remove and 40 not upgraded.
+Need to get 14.3 MB of archives.
+After this operation, 42.4 MB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ precise/main libgpg-error0 amd64 1.10-2ubuntu1 [14.5 kB]
+[2KGet:2 http://archive.ubuntu.com/ubuntu/ precise/main libp11-kit0 amd64 0.12-2ubuntu1 [34.3 kB]
+[2KGet:3 http://archive.ubuntu.com/ubuntu/ precise/main libkeyutils1 amd64 1.5.2-2 [7862 B]
+[2KGet:4 http://archive.ubuntu.com/ubuntu/ precise/main libidn11 amd64 1.23-2 [112 kB]
+[2KGet:5 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python2.7-minimal amd64 2.7.3-0ubuntu3.4 [1739 kB]
+[2KGet:6 http://archive.ubuntu.com/ubuntu/ precise/main librtmp0 amd64 2.4~20110711.gitc28f1bab-1 [57.1 kB]
+[2KGet:7 http://archive.ubuntu.com/ubuntu/ precise/main ca-certificates all 20111211 [169 kB]
+[2KGet:8 http://archive.ubuntu.com/ubuntu/ precise/main libmagic1 amd64 5.09-2 [217 kB]
+[2KGet:9 http://archive.ubuntu.com/ubuntu/ precise/main file amd64 5.09-2 [19.7 kB]
+[2KGet:10 http://archive.ubuntu.com/ubuntu/ precise/main mime-support all 3.51-1ubuntu1 [30.7 kB]
+[2KGet:11 http://archive.ubuntu.com/ubuntu/ precise/main ucf all 3.0025+nmu2ubuntu1 [54.4 kB]
+[2KGet:12 http://archive.ubuntu.com/ubuntu/ precise/main iso-codes all 3.31-1 [3547 kB]
+[2KGet:13 http://archive.ubuntu.com/ubuntu/ precise/main python-gnupginterface all 0.3.2-9.1ubuntu3 [19.2 kB]
+[2KGet:14 http://archive.ubuntu.com/ubuntu/ precise/main xz-lzma all 5.1.1alpha+20110809-3 [12.4 kB]
+[2KGet:15 http://archive.ubuntu.com/ubuntu/ precise/main python-pycurl amd64 7.19.0-4ubuntu3 [49.2 kB]
+[2KGet:16 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python-minimal amd64 2.7.3-0ubuntu2.2 [29.7 kB]
+[2KGet:17 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libapt-pkg4.12 amd64 0.8.16~exp12ubuntu10.16 [936 kB]
+[2KGet:18 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libapt-inst1.4 amd64 0.8.16~exp12ubuntu10.16 [102 kB]
+[2KGet:19 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libsqlite3-0 amd64 3.7.9-2ubuntu1.1 [349 kB]
+[2KGet:20 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libroken18-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [46.0 kB]
+[2KGet:21 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libasn1-8-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [220 kB]
+[2KGet:22 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libgcrypt11 amd64 1.5.0-3ubuntu0.2 [280 kB]
+[2KGet:23 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libtasn1-3 amd64 2.10-1ubuntu1.1 [43.3 kB]
+[2KGet:24 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libgnutls26 amd64 2.12.14-5ubuntu3.5 [459 kB]
+[2KGet:25 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5support0 amd64 1.10+dfsg~beta1-2ubuntu0.3 [23.8 kB]
+[2KGet:26 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libk5crypto3 amd64 1.10+dfsg~beta1-2ubuntu0.3 [80.1 kB]
+[2KGet:27 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5-3 amd64 1.10+dfsg~beta1-2ubuntu0.3 [355 kB]
+[2KGet:28 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libgssapi-krb5-2 amd64 1.10+dfsg~beta1-2ubuntu0.3 [118 kB]
+[2KGet:29 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libhcrypto4-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [103 kB]
+[2KGet:30 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libheimbase1-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [33.1 kB]
+[2KGet:31 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libwind0-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [77.8 kB]
+[2KGet:32 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libhx509-5-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [125 kB]
+[2KGet:33 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libkrb5-26-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [234 kB]
+[2KGet:34 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libheimntlm0-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [16.0 kB]
+[2KGet:35 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libgssapi3-heimdal amd64 1.6~git20120311.dfsg.1-2ubuntu0.1 [108 kB]
+[2KGet:36 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libsasl2-2 amd64 2.1.25.dfsg1-3ubuntu0.1 [69.1 kB]
+[2KGet:37 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libldap-2.4-2 amd64 2.4.28-1.1ubuntu4.4 [185 kB]
+[2KGet:38 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main openssl amd64 1.0.1-4ubuntu5.10 [524 kB]
+[2KGet:39 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libcurl3-gnutls amd64 7.22.0-3ubuntu4.6 [227 kB]
+[2KGet:40 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libexpat1 amd64 2.0.1-7.2ubuntu1.1 [131 kB]
+[2KGet:41 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main apt-utils amd64 0.8.16~exp12ubuntu10.16 [192 kB]
+[2KGet:42 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python2.7 amd64 2.7.3-0ubuntu3.4 [2674 kB]
+[2KGet:43 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python amd64 2.7.3-0ubuntu2.2 [168 kB]
+[2KGet:44 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main lsb-release all 4.0-0ubuntu20.3 [11.0 kB]
+[2KGet:45 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main krb5-locales all 1.10+dfsg~beta1-2ubuntu0.3 [9204 B]
+[2KGet:46 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main libsasl2-modules amd64 2.1.25.dfsg1-3ubuntu0.1 [63.2 kB]
+[2KGet:47 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python-apt-common all 0.8.3ubuntu7.1 [21.7 kB]
+[2KGet:48 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python-apt amd64 0.8.3ubuntu7.1 [188 kB]
+[2KGet:49 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main unattended-upgrades all 0.76ubuntu1 [24.7 kB]
+[2KGet:50 http://us.archive.ubuntu.com/ubuntu/ precise-updates/main python-software-properties all 0.82.7.6 [23.8 kB]
+[2K[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0m[2KFetched 14.3 MB in 18s (778 kB/s)
+[2K(Reading database ... [2K7601 files and directories currently installed.)
+[2KPreparing to replace python2.7-minimal 2.7.3-0ubuntu3 (using .../python2.7-minimal_2.7.3-0ubuntu3.4_amd64.deb) ...
+[2KUnpacking replacement python2.7-minimal ...
+[2KSetting up python2.7-minimal (2.7.3-0ubuntu3.4) ...
+[2K(Reading database ... [2K7601 files and directories currently installed.)
+[2KPreparing to replace python-minimal 2.7.3-0ubuntu2 (using .../python-minimal_2.7.3-0ubuntu2.2_amd64.deb) ...
+[2KUnpacking replacement python-minimal ...
+[2KSetting up python-minimal (2.7.3-0ubuntu2.2) ...
+[2K(Reading database ... [2K7601 files and directories currently installed.)
+[2KPreparing to replace libapt-pkg4.12 0.8.16~exp12ubuntu10 (using .../libapt-pkg4.12_0.8.16~exp12ubuntu10.16_amd64.deb) ...
+[2KUnpacking replacement libapt-pkg4.12 ...
+[2KSetting up libapt-pkg4.12 (0.8.16~exp12ubuntu10.16) ...
+[2KProcessing triggers for libc-bin ...
+[2Kldconfig deferred processing now taking place
+[2KSelecting previously unselected package libapt-inst1.4.
+[2K(Reading database ... [2K7601 files and directories currently installed.)
+[2KUnpacking libapt-inst1.4 (from .../libapt-inst1.4_0.8.16~exp12ubuntu10.16_amd64.deb) ...
+[2KSelecting previously unselected package libsqlite3-0.
+[2KUnpacking libsqlite3-0 (from .../libsqlite3-0_3.7.9-2ubuntu1.1_amd64.deb) ...
+[2KSelecting previously unselected package libroken18-heimdal.
+[2KUnpacking libroken18-heimdal (from .../libroken18-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libasn1-8-heimdal.
+[2KUnpacking libasn1-8-heimdal (from .../libasn1-8-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libgpg-error0.
+[2KUnpacking libgpg-error0 (from .../libgpg-error0_1.10-2ubuntu1_amd64.deb) ...
+[2KSelecting previously unselected package libgcrypt11.
+[2KUnpacking libgcrypt11 (from .../libgcrypt11_1.5.0-3ubuntu0.2_amd64.deb) ...
+[2KSelecting previously unselected package libp11-kit0.
+[2KUnpacking libp11-kit0 (from .../libp11-kit0_0.12-2ubuntu1_amd64.deb) ...
+[2KSelecting previously unselected package libtasn1-3.
+[2KUnpacking libtasn1-3 (from .../libtasn1-3_2.10-1ubuntu1.1_amd64.deb) ...
+[2KSelecting previously unselected package libgnutls26.
+[2KUnpacking libgnutls26 (from .../libgnutls26_2.12.14-5ubuntu3.5_amd64.deb) ...
+[2KSelecting previously unselected package libkrb5support0.
+[2KUnpacking libkrb5support0 (from .../libkrb5support0_1.10+dfsg~beta1-2ubuntu0.3_amd64.deb) ...
+[2KSelecting previously unselected package libk5crypto3.
+[2KUnpacking libk5crypto3 (from .../libk5crypto3_1.10+dfsg~beta1-2ubuntu0.3_amd64.deb) ...
+[2KSelecting previously unselected package libkeyutils1.
+[2KUnpacking libkeyutils1 (from .../libkeyutils1_1.5.2-2_amd64.deb) ...
+[2KSelecting previously unselected package libkrb5-3.
+[2KUnpacking libkrb5-3 (from .../libkrb5-3_1.10+dfsg~beta1-2ubuntu0.3_amd64.deb) ...
+[2KSelecting previously unselected package libgssapi-krb5-2.
+[2KUnpacking libgssapi-krb5-2 (from .../libgssapi-krb5-2_1.10+dfsg~beta1-2ubuntu0.3_amd64.deb) ...
+[2KSelecting previously unselected package libidn11.
+[2KUnpacking libidn11 (from .../libidn11_1.23-2_amd64.deb) ...
+[2KSelecting previously unselected package libhcrypto4-heimdal.
+[2KUnpacking libhcrypto4-heimdal (from .../libhcrypto4-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libheimbase1-heimdal.
+[2KUnpacking libheimbase1-heimdal (from .../libheimbase1-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libwind0-heimdal.
+[2KUnpacking libwind0-heimdal (from .../libwind0-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libhx509-5-heimdal.
+[2KUnpacking libhx509-5-heimdal (from .../libhx509-5-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libkrb5-26-heimdal.
+[2KUnpacking libkrb5-26-heimdal (from .../libkrb5-26-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libheimntlm0-heimdal.
+[2KUnpacking libheimntlm0-heimdal (from .../libheimntlm0-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libgssapi3-heimdal.
+[2KUnpacking libgssapi3-heimdal (from .../libgssapi3-heimdal_1.6~git20120311.dfsg.1-2ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libsasl2-2.
+[2KUnpacking libsasl2-2 (from .../libsasl2-2_2.1.25.dfsg1-3ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package libldap-2.4-2.
+[2KUnpacking libldap-2.4-2 (from .../libldap-2.4-2_2.4.28-1.1ubuntu4.4_amd64.deb) ...
+[2KSelecting previously unselected package librtmp0.
+[2KUnpacking librtmp0 (from .../librtmp0_2.4~20110711.gitc28f1bab-1_amd64.deb) ...
+[2KSelecting previously unselected package openssl.
+[2KUnpacking openssl (from .../openssl_1.0.1-4ubuntu5.10_amd64.deb) ...
+[2KSelecting previously unselected package ca-certificates.
+[2KUnpacking ca-certificates (from .../ca-certificates_20111211_all.deb) ...
+[2KSelecting previously unselected package libcurl3-gnutls.
+[2KUnpacking libcurl3-gnutls (from .../libcurl3-gnutls_7.22.0-3ubuntu4.6_amd64.deb) ...
+[2KSelecting previously unselected package libexpat1.
+[2KUnpacking libexpat1 (from .../libexpat1_2.0.1-7.2ubuntu1.1_amd64.deb) ...
+[2KSelecting previously unselected package apt-utils.
+[2KUnpacking apt-utils (from .../apt-utils_0.8.16~exp12ubuntu10.16_amd64.deb) ...
+[2KSelecting previously unselected package libmagic1.
+[2KUnpacking libmagic1 (from .../libmagic1_5.09-2_amd64.deb) ...
+[2KSelecting previously unselected package file.
+[2KUnpacking file (from .../archives/file_5.09-2_amd64.deb) ...
+[2KSelecting previously unselected package mime-support.
+[2KUnpacking mime-support (from .../mime-support_3.51-1ubuntu1_all.deb) ...
+[2KSelecting previously unselected package python2.7.
+[2KUnpacking python2.7 (from .../python2.7_2.7.3-0ubuntu3.4_amd64.deb) ...
+[2KSelecting previously unselected package python.
+[2KUnpacking python (from .../python_2.7.3-0ubuntu2.2_amd64.deb) ...
+[2KSelecting previously unselected package lsb-release.
+[2KUnpacking lsb-release (from .../lsb-release_4.0-0ubuntu20.3_all.deb) ...
+[2KSelecting previously unselected package ucf.
+[2KUnpacking ucf (from .../ucf_3.0025+nmu2ubuntu1_all.deb) ...
+[2K[91mMoving old data out of the way
+[0m[2KSelecting previously unselected package iso-codes.
+[2KUnpacking iso-codes (from .../iso-codes_3.31-1_all.deb) ...
+[2KSelecting previously unselected package krb5-locales.
+[2KUnpacking krb5-locales (from .../krb5-locales_1.10+dfsg~beta1-2ubuntu0.3_all.deb) ...
+[2KSelecting previously unselected package libsasl2-modules.
+[2KUnpacking libsasl2-modules (from .../libsasl2-modules_2.1.25.dfsg1-3ubuntu0.1_amd64.deb) ...
+[2KSelecting previously unselected package python-apt-common.
+[2KUnpacking python-apt-common (from .../python-apt-common_0.8.3ubuntu7.1_all.deb) ...
+[2KSelecting previously unselected package python-apt.
+[2KUnpacking python-apt (from .../python-apt_0.8.3ubuntu7.1_amd64.deb) ...
+[2KSelecting previously unselected package python-gnupginterface.
+[2KUnpacking python-gnupginterface (from .../python-gnupginterface_0.3.2-9.1ubuntu3_all.deb) ...
+[2KSelecting previously unselected package xz-lzma.
+[2KUnpacking xz-lzma (from .../xz-lzma_5.1.1alpha+20110809-3_all.deb) ...
+[2KSelecting previously unselected package unattended-upgrades.
+[2KUnpacking unattended-upgrades (from .../unattended-upgrades_0.76ubuntu1_all.deb) ...
+[2KSelecting previously unselected package python-pycurl.
+[2KUnpacking python-pycurl (from .../python-pycurl_7.19.0-4ubuntu3_amd64.deb) ...
+[2KSelecting previously unselected package python-software-properties.
+[2KUnpacking python-software-properties (from .../python-software-properties_0.82.7.6_all.deb) ...
+[2KSetting up libapt-inst1.4 (0.8.16~exp12ubuntu10.16) ...
+[2KSetting up libsqlite3-0 (3.7.9-2ubuntu1.1) ...
+[2KSetting up libroken18-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+[2KSetting up libasn1-8-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+[2KSetting up libgpg-error0 (1.10-2ubuntu1) ...
+[2KSetting up libgcrypt11 (1.5.0-3ubuntu0.2) ...
+[2KSetting up libp11-kit0 (0.12-2ubuntu1) ...
+[2KSetting up libtasn1-3 (2.10-1ubuntu1.1) ...
+[2KSetting up libgnutls26 (2.12.14-5ubuntu3.5) ...
+[2KSetting up libkrb5support0 (1.10+dfsg~beta1-2ubuntu0.3) ...
+[2KSetting up libk5crypto3 (1.10+dfsg~beta1-2ubuntu0.3) ...
+[2KSetting up libkeyutils1 (1.5.2-2) ...
+[2KSetting up libkrb5-3 (1.10+dfsg~beta1-2ubuntu0.3) ...
+[2KSetting up libgssapi-krb5-2 (1.10+dfsg~beta1-2ubuntu0.3) ...
+[2KSetting up libidn11 (1.23-2) ...
+[2KSetting up libhcrypto4-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+[2KSetting up libheimbase1-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+[2KSetting up libwind0-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+[2KSetting up libhx509-5-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+[2KSetting up libkrb5-26-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+[2KSetting up libheimntlm0-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+[2KSetting up libgssapi3-heimdal (1.6~git20120311.dfsg.1-2ubuntu0.1) ...
+[2KSetting up libsasl2-2 (2.1.25.dfsg1-3ubuntu0.1) ...
+[2KSetting up libldap-2.4-2 (2.4.28-1.1ubuntu4.4) ...
+[2KSetting up librtmp0 (2.4~20110711.gitc28f1bab-1) ...
+[2KSetting up openssl (1.0.1-4ubuntu5.10) ...
+[2KSetting up ca-certificates (20111211) ...
+[2K[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+[0m[2K[91mdebconf: falling back to frontend: Readline
+[0m[2K[91mdebconf: unable to initialize frontend: Readline
+debconf: (Can't locate Term/ReadLine.pm in @INC (@INC contains: /etc/perl /usr/local/lib/perl/5.14.2 /usr/local/share/perl/5.14.2 /usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.14 /usr/share/perl/5.14 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+[0m[2K[91mUpdating certificates in /etc/ssl/certs... [0m[2K[91m152 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d....[0m[2K[91mdone.
+[0m[2KSetting up libcurl3-gnutls (7.22.0-3ubuntu4.6) ...
+[2KSetting up libexpat1 (2.0.1-7.2ubuntu1.1) ...
+[2KSetting up apt-utils (0.8.16~exp12ubuntu10.16) ...
+[2KSetting up libmagic1 (5.09-2) ...
+[2KSetting up file (5.09-2) ...
+[2KSetting up mime-support (3.51-1ubuntu1) ...
+[2Kupdate-alternatives: using /usr/bin/see to provide /usr/bin/view (view) in auto mode.
+[2KSetting up python2.7 (2.7.3-0ubuntu3.4) ...
+[2KSetting up python (2.7.3-0ubuntu2.2) ...
+[2KSetting up lsb-release (4.0-0ubuntu20.3) ...
+[2KSetting up ucf (3.0025+nmu2ubuntu1) ...
+[2K[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+[0m[2K[91mdebconf: falling back to frontend: Readline
+[0m[2K[91mdebconf: unable to initialize frontend: Readline
+[0m[2K[91mdebconf: (Can't locate Term/ReadLine.pm in @INC (@INC contains: /etc/perl /usr/local/lib/perl/5.14.2 /usr/local/share/perl/5.14.2 /usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.14 /usr/share/perl/5.14 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+[0m[2KSetting up iso-codes (3.31-1) ...
+[2KSetting up krb5-locales (1.10+dfsg~beta1-2ubuntu0.3) ...
+[2KSetting up libsasl2-modules (2.1.25.dfsg1-3ubuntu0.1) ...
+[2KSetting up python-apt-common (0.8.3ubuntu7.1) ...
+[2KSetting up python-apt (0.8.3ubuntu7.1) ...
+[2KSetting up python-gnupginterface (0.3.2-9.1ubuntu3) ...
+[2KSetting up xz-lzma (5.1.1alpha+20110809-3) ...
+[2KSetting up unattended-upgrades (0.76ubuntu1) ...
+[2K[91mdebconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+[0m[2K[91mdebconf: falling back to frontend: Readline
+[0m[2K[91mdebconf: unable to initialize frontend: Readline
+[0m[2K[91mdebconf: (Can't locate Term/ReadLine.pm in @INC (@INC contains: /etc/perl /usr/local/lib/perl/5.14.2 /usr/local/share/perl/5.14.2 /usr/lib/perl5 /usr/share/perl5 /usr/lib/perl/5.14 /usr/share/perl/5.14 /usr/local/lib/site_perl .) at /usr/share/perl5/Debconf/FrontEnd/Readline.pm line 7.)
+debconf: falling back to frontend: Teletype
+[0m[2KSetting up python-pycurl (7.19.0-4ubuntu3) ...
+[2KSetting up python-software-properties (0.82.7.6) ...
+[2KProcessing triggers for libc-bin ...
+[2Kldconfig deferred processing now taking place
+[2KReading package lists...[2K
+[2KBuilding dependency tree...[2K
+Reading state information...[2K
+[2KThe following NEW packages will be installed:
+  ubuntu-cloud-keyring
+[2K0 upgraded, 1 newly installed, 0 to remove and 40 not upgraded.
+Need to get 5144 B of archives.
+After this operation, 34.8 kB of additional disk space will be used.
+Get:1 http://us.archive.ubuntu.com/ubuntu/ precise-updates/universe ubuntu-cloud-keyring all 2012.08.14~12.04.1 [5144 B]
+[2KFetched 5144 B in 0s (9904 B/s)
+[2KSelecting previously unselected package ubuntu-cloud-keyring.
+(Reading database ... [2K9550 files and directories currently installed.)
+[2KUnpacking ubuntu-cloud-keyring (from .../ubuntu-cloud-keyring_2012.08.14~12.04.1_all.deb) ...
+[2KSetting up ubuntu-cloud-keyring (2012.08.14~12.04.1) ...
+[2KImporting ubuntu-cloud.archive.canonical.com keyring
+[2KOK
+[2KProcessing ubuntu-cloud.archive.canonical.com removal keyring
+[2KOK
+[2KYou are about to add the following to your system:
+ Ubuntu Cloud Archive for Openstack havana
+ More info: https://wiki.ubuntu.com/ServerTeam/CloudArchive
+[2KHit http://extras.ubuntu.com precise Release.gpg
+[2KGet:1 http://ubuntu-cloud.archive.canonical.com precise-updates/havana Release.gpg [543 B]
+[2KHit http://archive.ubuntu.com precise Release.gpg
+[2KHit http://security.ubuntu.com precise-security Release.gpg
+[2KHit http://extras.ubuntu.com precise Release
+[2KGet:2 http://ubuntu-cloud.archive.canonical.com precise-updates/havana Release [5519 B]
+[2KHit http://archive.ubuntu.com precise Release
+[2KHit http://security.ubuntu.com precise-security Release
+[2KHit http://extras.ubuntu.com precise/main Sources
+[2KGet:3 http://ubuntu-cloud.archive.canonical.com precise-updates/havana/main Sources [53.2 kB]
+[2KHit http://archive.ubuntu.com precise/main amd64 Packages
+[2KHit http://security.ubuntu.com precise-security/main Sources
+[2KHit http://extras.ubuntu.com precise/main amd64 Packages
+[2KHit http://extras.ubuntu.com precise/main i386 Packages
+[2KIgn http://extras.ubuntu.com precise/main TranslationIndex
+[2KHit http://archive.ubuntu.com precise/universe amd64 Packages
+[2KHit http://archive.ubuntu.com precise/main i386 Packages
+[2KHit http://archive.ubuntu.com precise/universe i386 Packages
+[2KHit http://archive.ubuntu.com precise/main TranslationIndex
+[2KHit http://archive.ubuntu.com precise/universe TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise Release.gpg
+[2KHit http://us.archive.ubuntu.com precise-updates Release.gpg
+[2KHit http://security.ubuntu.com precise-security/restricted Sources
+[2KHit http://security.ubuntu.com precise-security/universe Sources
+[2KHit http://us.archive.ubuntu.com precise-backports Release.gpg
+[2KHit http://security.ubuntu.com precise-security/multiverse Sources
+[2KHit http://security.ubuntu.com precise-security/main amd64 Packages
+[2KHit http://security.ubuntu.com precise-security/restricted amd64 Packages
+[2KHit http://security.ubuntu.com precise-security/universe amd64 Packages
+[2KHit http://security.ubuntu.com precise-security/multiverse amd64 Packages
+[2KHit http://security.ubuntu.com precise-security/main i386 Packages
+[2KHit http://security.ubuntu.com precise-security/restricted i386 Packages
+[2KHit http://security.ubuntu.com precise-security/universe i386 Packages
+[2KHit http://security.ubuntu.com precise-security/multiverse i386 Packages
+[2KHit http://security.ubuntu.com precise-security/main TranslationIndex
+[2KHit http://security.ubuntu.com precise-security/multiverse TranslationIndex
+[2KHit http://security.ubuntu.com precise-security/restricted TranslationIndex
+[2KHit http://security.ubuntu.com precise-security/universe TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise Release
+[2KGet:4 http://ubuntu-cloud.archive.canonical.com precise-updates/havana/main amd64 Packages [102 kB]
+[2KIgn http://extras.ubuntu.com precise/main Translation-en
+[2KHit http://archive.ubuntu.com precise/main Translation-en
+[2KHit http://us.archive.ubuntu.com precise-updates Release
+[2KGet:5 http://ubuntu-cloud.archive.canonical.com precise-updates/havana/main i386 Packages [102 kB]
+[2KHit http://archive.ubuntu.com precise/universe Translation-en
+[2KHit http://us.archive.ubuntu.com precise-backports Release
+[2KHit http://security.ubuntu.com precise-security/main Translation-en
+[2KHit http://us.archive.ubuntu.com precise/main Sources
+[2KHit http://us.archive.ubuntu.com precise/restricted Sources
+[2KHit http://us.archive.ubuntu.com precise/universe Sources
+[2KHit http://us.archive.ubuntu.com precise/multiverse Sources
+[2KHit http://us.archive.ubuntu.com precise/main amd64 Packages
+[2KHit http://security.ubuntu.com precise-security/multiverse Translation-en
+[2KIgn http://ubuntu-cloud.archive.canonical.com precise-updates/havana/main TranslationIndex
+[2KHit http://security.ubuntu.com precise-security/restricted Translation-en
+[2KHit http://security.ubuntu.com precise-security/universe Translation-en
+[2KHit http://us.archive.ubuntu.com precise/restricted amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise/universe amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise/multiverse amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise/main i386 Packages
+[2KHit http://us.archive.ubuntu.com precise/restricted i386 Packages
+[2KHit http://us.archive.ubuntu.com precise/universe i386 Packages
+[2KHit http://us.archive.ubuntu.com precise/multiverse i386 Packages
+[2KHit http://us.archive.ubuntu.com precise/main TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise/multiverse TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise/restricted TranslationIndex
+[2KIgn http://ubuntu-cloud.archive.canonical.com precise-updates/havana/main Translation-en
+[2KHit http://us.archive.ubuntu.com precise/universe TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise-updates/main Sources
+[2KHit http://us.archive.ubuntu.com precise-updates/restricted Sources
+[2KHit http://us.archive.ubuntu.com precise-updates/universe Sources
+[2KHit http://us.archive.ubuntu.com precise-updates/multiverse Sources
+[2KHit http://us.archive.ubuntu.com precise-updates/main amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise-updates/restricted amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise-updates/universe amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise-updates/multiverse amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise-updates/main i386 Packages
+[2KHit http://us.archive.ubuntu.com precise-updates/restricted i386 Packages
+[2KHit http://us.archive.ubuntu.com precise-updates/universe i386 Packages
+[2KHit http://us.archive.ubuntu.com precise-updates/multiverse i386 Packages
+[2KHit http://us.archive.ubuntu.com precise-updates/main TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise-updates/multiverse TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise-updates/restricted TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise-updates/universe TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise-backports/main Sources
+[2KHit http://us.archive.ubuntu.com precise-backports/restricted Sources
+[2KHit http://us.archive.ubuntu.com precise-backports/universe Sources
+[2KHit http://us.archive.ubuntu.com precise-backports/multiverse Sources
+[2KHit http://us.archive.ubuntu.com precise-backports/main amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise-backports/restricted amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise-backports/universe amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise-backports/multiverse amd64 Packages
+[2KHit http://us.archive.ubuntu.com precise-backports/main i386 Packages
+[2KHit http://us.archive.ubuntu.com precise-backports/restricted i386 Packages
+[2KHit http://us.archive.ubuntu.com precise-backports/universe i386 Packages
+[2KHit http://us.archive.ubuntu.com precise-backports/multiverse i386 Packages
+[2KHit http://us.archive.ubuntu.com precise-backports/main TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise-backports/multiverse TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise-backports/restricted TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise-backports/universe TranslationIndex
+[2KHit http://us.archive.ubuntu.com precise/main Translation-en
+[2KHit http://us.archive.ubuntu.com precise/multiverse Translation-en
+[2KHit http://us.archive.ubuntu.com precise/restricted Translation-en
+[2KHit http://us.archive.ubuntu.com precise/universe Translation-en
+[2KHit http://us.archive.ubuntu.com precise-updates/main Translation-en
+Hit http://us.archive.ubuntu.com precise-updates/multiverse Translation-en
+[2KHit http://us.archive.ubuntu.com precise-updates/restricted Translation-en
+[2KHit http://us.archive.ubuntu.com precise-updates/universe Translation-en
+[2KHit http://us.archive.ubuntu.com precise-backports/main Translation-en
+[2KHit http://us.archive.ubuntu.com precise-backports/multiverse Translation-en
+[2KHit http://us.archive.ubuntu.com precise-backports/restricted Translation-en
+[2KHit http://us.archive.ubuntu.com precise-backports/universe Translation-en
+[2KFetched 264 kB in 1s (133 kB/s)
+Reading package lists...[2K
+[2KFinished running add-base-to-openstack build event
+[2K ---> ffe09684be34
+[2KSuccessfully built ffe09684be34
+Finished building Container(titanium-openstack-120)

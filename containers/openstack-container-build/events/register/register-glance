@@ -1,0 +1,21 @@
+#!/bin/bash
+
+EVENTNAME="register-glance"
+BUILDDATE=$(date)
+
+echo "Starting to run $EVENTNAME register event"
+
+MYSQL_ROOT_PASS=openstack
+MYSQL_GLANCE_PASS=openstack
+
+# Create database
+mysql --user=root --password=$MYSQL_ROOT_PASS -e "CREATE DATABASE glance;"
+mysql --user=root --password=$MYSQL_ROOT_PASS -e "GRANT ALL PRIVILEGES ON glance.* TO 'glance'@'%';"
+mysql --user=root --password=$MYSQL_ROOT_PASS -e "SET PASSWORD FOR 'glance'@'%' = PASSWORD('$MYSQL_GLANCE_PASS');"
+
+glance-manage db_sync
+
+echo $EVENTNAME >> /titanium/build-info
+echo $BUILDDATE >> /titanium/build-info
+
+echo "Finished running $EVENTNAME register event"

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+CONTAINERNAME="add-base-to-openstack"
+BUILDDATE=$(date)
+
+echo "Starting to run $CONTAINERNAME build event"
+
+#TODO: Put these varables in Titanium manager
+MYSQL_ROOT_PASS=openstack
+MYSQL_GLANCE_PASS=openstack
+
+#Lsts install some packages
+apt-get -y install glance
+apt-get -y install python-glanceclient
+
+echo $CONTAINERNAME >> /titanium/build-info
+echo $BUILDDATE >> /titanium/build-info
+
+echo "Finished running $CONTAINERNAME build event"
+

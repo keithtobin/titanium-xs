@@ -1,0 +1,41 @@
+#!/bin/bash
+# Openstack Titanium Identity
+#
+# Version: 0.0.1
+# Desctiption: This script is for building the keystone container.	
+#
+
+
+if [ "$1" == "-b" ]; then
+
+   	CONTAINERNAME="titanium-base-13"
+	LOGFILE="./logs/build.log"
+
+	echo "Starting to build Container($CONTAINERNAME)"
+
+	if docker images | grep "$CONTAINERNAME"; then
+		
+		echo "Removing image ($CONTAINERNAME) from docker"
+
+		docker rmi $CONTAINERNAME
+		returncode=$?
+		if [ "$returncode" -ne "0" ]; then
+			echo "Error while removing image ($CONTAINERNAME) from docker, exit code was $returncode"
+ 			exit $returncode
+		fi
+	fi        
+
+       	echo "Running build contaner ($CONTAINERNAME)"
+	docker build -t $CONTAINERNAME .
+        returncode=$?
+        if [ "$returncode" -ne "0" ]; then
+		echo "Error while building Container($CONTAINERNAME), exit code was $returncode"
+                exit $returncode        
+        fi
+
+	echo "Finished building Container($CONTAINERNAME)"
+else
+	rm ./logs/*        
+	./build -b | tee ./logs/log.log
+fi
+

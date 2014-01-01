@@ -1,0 +1,19 @@
+#!/bin/bash
+# Openstack Titanium Identity
+#
+# Version: 0.0.1
+# Desctiption: This script is for building all Openstack Titanium containers.	
+#
+
+echo "Building all Openstack Titanium containers"
+
+cd titanium-base-container-build
+./build-titanium-base-container
+
+OUT=$?
+if [ $OUT -eq 0 ];then
+   echo "echo "Finished.......""
+else
+   echo "Error!........"
+fi
+

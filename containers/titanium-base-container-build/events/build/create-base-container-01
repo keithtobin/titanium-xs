@@ -1,0 +1,63 @@
+#!/bin/bash
+
+CONTAINERNAME="titanium-base-container"
+BUILDDATE=$(date)
+
+echo "Starting to run $CONTAINERNAME create  event"
+
+#This is a little hack
+dpkg-divert --local --rename --add /sbin/initctl
+ln -s /bin/true /sbin/initctl
+
+#Add keys here
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 16126D3A3E5C1192
+
+#Add  sorce.list repos here
+echo "" > /etc/apt/sources.list
+echo "deb http://archive.ubuntu.com/ubuntu precise main universe" >> /etc/apt/sources.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ precise main restricted" >> /etc/apt/sources.list
+echo "deb-src http://us.archive.ubuntu.com/ubuntu/ precise main restricted" >> /etc/apt/sources.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ precise-updates main restricted" >> /etc/apt/sources.list
+echo "deb-src http://us.archive.ubuntu.com/ubuntu/ precise-updates main restricted" >> /etc/apt/sources.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
+echo "deb-src http://us.archive.ubuntu.com/ubuntu/ precise universe" >> /etc/apt/sources.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ precise-updates universe" >> /etc/apt/sources.list
+echo "deb-src http://us.archive.ubuntu.com/ubuntu/ precise-updates universe" >> /etc/apt/sources.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ precise multiverse" >> /etc/apt/sources.list
+echo "deb-src http://us.archive.ubuntu.com/ubuntu/ precise multiverse" >> /etc/apt/sources.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ precise-updates multiverse" >> /etc/apt/sources.list
+echo "deb-src http://us.archive.ubuntu.com/ubuntu/ precise-updates multiverse" >> /etc/apt/sources.list
+echo "deb http://us.archive.ubuntu.com/ubuntu/ precise-backports main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb-src http://us.archive.ubuntu.com/ubuntu/ precise-backports main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb http://security.ubuntu.com/ubuntu precise-security main restricted" >> /etc/apt/sources.list
+echo "deb-src http://security.ubuntu.com/ubuntu precise-security main restricted" >> /etc/apt/sources.list
+echo "deb http://security.ubuntu.com/ubuntu precise-security universe" >> /etc/apt/sources.list
+echo "deb-src http://security.ubuntu.com/ubuntu precise-security universe" >> /etc/apt/sources.list
+echo "deb http://security.ubuntu.com/ubuntu precise-security multiverse" >> /etc/apt/sources.list
+echo "deb-src http://security.ubuntu.com/ubuntu precise-security multiverse" >> /etc/apt/sources.list
+echo "deb http://extras.ubuntu.com/ubuntu precise main" >> /etc/apt/sources.list
+echo "deb-src http://extras.ubuntu.com/ubuntu precise main" >> /etc/apt/sources.list
+
+
+#Add apt-get repos here
+#add-apt-repository -y ppa:gophers/go
+
+
+#Now all repos and keys are added lets updat and upgrade
+apt-get update
+#apt-get upgrade -y 
+
+#Add some default packages
+apt-get install -y nano
+#apt-get install -y golang-stable
+
+#Create titanium directory structure
+touch /titanium/container-build-info 
+mkdir "/var/log/titanium"
+mkdir "etc/titanium"
+
+echo $CONTAINERNAME >> /titanium/build-info
+echo $BUILDDATE >> /titanium/build-info
+
+echo "Finished running $CONTAINERNAME create event"
+

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+CONTAINERNAME="add-keystone"
+BUILDDATE=$(date)
+
+echo "Starting to run $CONTAINERNAME build event"
+
+#Lets deploy keystone
+apt-get install -y keystone
+
+echo $CONTAINERNAME >> /titanium/build-info
+echo $BUILDDATE >> /titanium/build-info
+
+echo "Finished running $CONTAINERNAME build event"
+

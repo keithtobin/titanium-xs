@@ -1,0 +1,33 @@
+#!/bin/bash
+
+EVENTNAME="add-mysql"
+BUILDDATE=$(date)
+
+echo "Starting to run $EVENTNAME build event"
+
+#TODO: Get these varables from titanium manager
+export DEBIAN_FRONTEND=noninteractive
+export MYSQL_ROOT_PASS=openstack
+export MYSQL_HOST=0.0.0.0
+export MYSQL_PASS=openstack
+
+echo "mysql-server-5.5 mysql-server/root_password password $MYSQL_ROOT_PASS" |  debconf-set-selections
+echo "mysql-server-5.5 mysql-server/root_password_again password $MYSQL_ROOT_PASS" |  debconf-set-selections
+echo "mysql-server-5.5 mysql-server/root_password seen true" |  debconf-set-selections
+echo "mysql-server-5.5 mysql-server/root_password_again seen true" |  debconf-set-selections
+
+#This is a little hack as mysql needs a mount fs
+cat /proc/mounts > /etc/mtab
+
+#Put packages to be added here
+apt-get -y install mysql-server
+apt-get -y install python-mysqldb
+
+#TODO: Move this to register event
+sed -i "s/^bind\-address.*/bind-address = ${MYSQL_HOST}/g" /etc/mysql/my.cnf
+
+echo $EVENTNAME >> /titanium/build-info
+echo $BUILDDATE >> /titanium/build-info
+
+echo "Finished running $EVENTNAME build event"
+

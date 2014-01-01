@@ -1,0 +1,13 @@
+#!/bin/bash
+
+EVENTNAME="register-mysql"
+BUILDDATE=$(date)
+
+echo "Starting to run $EVENTNAME register event"
+
+mysqld_safe  > /dev/null 2>&1 &
+
+echo $EVENTNAME >> /titanium/build-info
+echo $BUILDDATE >> /titanium/build-info
+
+echo "Finished running $EVENTNAME register event"

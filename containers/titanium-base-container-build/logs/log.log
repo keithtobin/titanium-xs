@@ -1,0 +1,157 @@
+Starting to build Container(titanium-base-13)
+Running build contaner (titanium-base-13)
+[2KStep 1 : FROM ubuntu
+[2K ---> 8dbd9e392a96
+[2KStep 2 : MAINTAINER Keith Tobin <keith.tobin@gmail.com>
+[2K ---> Using cache
+[2K ---> e51823d39b5c
+[2KStep 3 : ADD ./events/build/create-base-container-01 /titanium/events/build/create-base-container-01
+[2K ---> 35086a598ec1
+[2KStep 4 : RUN chmod 777 /titanium/events/build/*
+[2K ---> Running in dbae11c82376
+[2K ---> 1272fd0a7586
+[2KStep 5 : RUN /titanium/events/build/create-base-container-01
+[2K ---> Running in 2cab0203fdef
+[2KStarting to run titanium-base-container create  event
+[2KAdding 'local diversion of /sbin/initctl to /sbin/initctl.distrib'
+[2KExecuting: gpg --ignore-time-conflict --no-options --no-default-keyring --secret-keyring /tmp/tmp.ZnlfgHfc5X --trustdb-name /etc/apt/trustdb.gpg --keyring /etc/apt/trusted.gpg --primary-keyring /etc/apt/trusted.gpg --keyserver keyserver.ubuntu.com --recv-keys 16126D3A3E5C1192
+[2K[91mgpg: requesting key 3E5C1192 from hkp server keyserver.ubuntu.com
+[0m[2K[91mgpg: key 3E5C1192: public key "Ubuntu Extras Archive Automatic Signing Key <ftpmaster@ubuntu.com>" imported
+[0m[2K[91mgpg: no ultimately trusted keys found
+[0m[2K[91mgpg: Total number processed: 1
+gpg:               imported: 1[0m[2K[91m
+[0m[2KIgn http://extras.ubuntu.com precise InRelease
+[2KIgn http://archive.ubuntu.com precise InRelease
+[2KIgn http://security.ubuntu.com precise-security InRelease
+[2KGet:1 http://extras.ubuntu.com precise Release.gpg [72 B]
+[2KHit http://archive.ubuntu.com precise Release.gpg
+[2KGet:2 http://security.ubuntu.com precise-security Release.gpg [198 B]
+[2KGet:3 http://extras.ubuntu.com precise Release [11.9 kB]
+[2KHit http://archive.ubuntu.com precise Release
+Get:4 http://security.ubuntu.com precise-security Release [49.6 kB]
+[2KGet:5 http://extras.ubuntu.com precise/main Sources [8776 B]
+[2KHit http://archive.ubuntu.com precise/main amd64 Packages
+[2KIgn http://us.archive.ubuntu.com precise InRelease
+[2KIgn http://us.archive.ubuntu.com precise-updates InRelease
+[2KIgn http://us.archive.ubuntu.com precise-backports InRelease
+[2KGet:6 http://extras.ubuntu.com precise/main amd64 Packages [11.9 kB]
+[2KGet:7 http://archive.ubuntu.com precise/universe amd64 Packages [6167 kB]
+[2KGet:8 http://extras.ubuntu.com precise/main i386 Packages [11.9 kB]
+[2KGet:9 http://security.ubuntu.com precise-security/main Sources [119 kB]
+[2KIgn http://extras.ubuntu.com precise/main TranslationIndex
+[2KGet:10 http://us.archive.ubuntu.com precise Release.gpg [198 B]
+[2KIgn http://extras.ubuntu.com precise/main Translation-en
+[2KGet:11 http://us.archive.ubuntu.com precise-updates Release.gpg [198 B]
+[2KGet:12 http://security.ubuntu.com precise-security/restricted Sources [2239 B]
+[2KGet:13 http://security.ubuntu.com precise-security/universe Sources [34.4 kB]
+[2KGet:14 http://security.ubuntu.com precise-security/multiverse Sources [1636 B]
+[2KGet:15 http://security.ubuntu.com precise-security/main amd64 Packages [438 kB]
+[2KGet:16 http://us.archive.ubuntu.com precise-backports Release.gpg [198 B]
+[2KGet:17 http://us.archive.ubuntu.com precise Release [49.6 kB]
+[2KGet:18 http://us.archive.ubuntu.com precise-updates Release [49.6 kB]
+[2KGet:19 http://security.ubuntu.com precise-security/restricted amd64 Packages [4872 B]
+[2KGet:20 http://security.ubuntu.com precise-security/universe amd64 Packages [109 kB]
+[2KGet:21 http://security.ubuntu.com precise-security/multiverse amd64 Packages [2235 B]
+[2KGet:22 http://security.ubuntu.com precise-security/main i386 Packages [465 kB]
+[2KGet:23 http://us.archive.ubuntu.com precise-backports Release [49.6 kB]
+[2KGet:24 http://us.archive.ubuntu.com precise/main Sources [1175 kB]
+[2KGet:25 http://security.ubuntu.com precise-security/restricted i386 Packages [4863 B]
+[2KGet:26 http://security.ubuntu.com precise-security/universe i386 Packages [114 kB]
+[2KGet:27 http://security.ubuntu.com precise-security/multiverse i386 Packages [2412 B]
+[2KGet:28 http://security.ubuntu.com precise-security/main TranslationIndex [74 B]
+[2KGet:29 http://security.ubuntu.com precise-security/multiverse TranslationIndex [72 B]
+[2KGet:30 http://security.ubuntu.com precise-security/restricted TranslationIndex [72 B]
+[2KGet:31 http://security.ubuntu.com precise-security/universe TranslationIndex [73 B]
+[2KGet:32 http://security.ubuntu.com precise-security/main Translation-en [194 kB]
+[2KGet:33 http://security.ubuntu.com precise-security/multiverse Translation-en [1216 B]
+[2KGet:34 http://security.ubuntu.com precise-security/restricted Translation-en [1001 B]
+[2KGet:35 http://security.ubuntu.com precise-security/universe Translation-en [64.0 kB]
+[2KGet:36 http://us.archive.ubuntu.com precise/restricted Sources [5306 B]
+[2KGet:37 http://us.archive.ubuntu.com precise/universe Sources [6239 kB]
+[2KGet:38 http://archive.ubuntu.com precise/main i386 Packages [1641 kB]
+[2KGet:39 http://archive.ubuntu.com precise/universe i386 Packages [6180 kB]
+[2KGet:40 http://archive.ubuntu.com precise/main TranslationIndex [3706 B]
+[2KGet:41 http://archive.ubuntu.com precise/universe TranslationIndex [2922 B]
+[2KGet:42 http://archive.ubuntu.com precise/main Translation-en [893 kB]
+[2KGet:43 http://archive.ubuntu.com precise/universe Translation-en [4133 kB]
+[2KGet:44 http://us.archive.ubuntu.com precise/multiverse Sources [188 kB]
+[2KGet:45 http://us.archive.ubuntu.com precise/main amd64 Packages [1640 kB]
+[2KGet:46 http://us.archive.ubuntu.com precise/restricted amd64 Packages [9098 B]
+[2KGet:47 http://us.archive.ubuntu.com precise/universe amd64 Packages [6167 kB]
+[2KGet:48 http://us.archive.ubuntu.com precise/multiverse amd64 Packages [152 kB]
+[2KGet:49 http://us.archive.ubuntu.com precise/main i386 Packages [1641 kB]
+[2KGet:50 http://us.archive.ubuntu.com precise/restricted i386 Packages [9108 B]
+[2KGet:51 http://us.archive.ubuntu.com precise/universe i386 Packages [6180 kB]
+[2KGet:52 http://us.archive.ubuntu.com precise/multiverse i386 Packages [155 kB]
+[2KGet:53 http://us.archive.ubuntu.com precise/main TranslationIndex [3706 B]
+[2KGet:54 http://us.archive.ubuntu.com precise/multiverse TranslationIndex [2676 B]
+[2KGet:55 http://us.archive.ubuntu.com precise/restricted TranslationIndex [2596 B]
+[2KGet:56 http://us.archive.ubuntu.com precise/universe TranslationIndex [2922 B]
+[2KGet:57 http://us.archive.ubuntu.com precise-updates/main Sources [523 kB]
+[2KGet:58 http://us.archive.ubuntu.com precise-updates/restricted Sources [7212 B]
+[2KGet:59 http://us.archive.ubuntu.com precise-updates/universe Sources [123 kB]
+[2KGet:60 http://us.archive.ubuntu.com precise-updates/multiverse Sources [8725 B]
+[2KGet:61 http://us.archive.ubuntu.com precise-updates/main amd64 Packages [917 kB]
+[2KGet:62 http://us.archive.ubuntu.com precise-updates/restricted amd64 Packages [12.6 kB]
+[2KGet:63 http://us.archive.ubuntu.com precise-updates/universe amd64 Packages [288 kB]
+[2KGet:64 http://us.archive.ubuntu.com precise-updates/multiverse amd64 Packages [15.8 kB]
+[2KGet:65 http://us.archive.ubuntu.com precise-updates/main i386 Packages [945 kB]
+[2KGet:66 http://us.archive.ubuntu.com precise-updates/restricted i386 Packages [12.5 kB]
+[2KGet:67 http://us.archive.ubuntu.com precise-updates/universe i386 Packages [293 kB]
+[2KGet:68 http://us.archive.ubuntu.com precise-updates/multiverse i386 Packages [15.9 kB]
+[2KGet:69 http://us.archive.ubuntu.com precise-updates/main TranslationIndex [3564 B]
+[2KGet:70 http://us.archive.ubuntu.com precise-updates/multiverse TranslationIndex [2605 B]
+[2KGet:71 http://us.archive.ubuntu.com precise-updates/restricted TranslationIndex [2461 B]
+[2KGet:72 http://us.archive.ubuntu.com precise-updates/universe TranslationIndex [2850 B]
+[2KGet:73 http://us.archive.ubuntu.com precise-backports/main Sources [4193 B]
+[2KGet:74 http://us.archive.ubuntu.com precise-backports/restricted Sources [20 B]
+[2KGet:75 http://us.archive.ubuntu.com precise-backports/universe Sources [42.8 kB]
+[2KGet:76 http://us.archive.ubuntu.com precise-backports/multiverse Sources [5404 B]
+[2KGet:77 http://us.archive.ubuntu.com precise-backports/main amd64 Packages [4772 B]
+[2KGet:78 http://us.archive.ubuntu.com precise-backports/restricted amd64 Packages [20 B]
+[2KGet:79 http://us.archive.ubuntu.com precise-backports/universe amd64 Packages [46.2 kB]
+[2KGet:80 http://us.archive.ubuntu.com precise-backports/multiverse amd64 Packages [5198 B]
+[2KGet:81 http://us.archive.ubuntu.com precise-backports/main i386 Packages [4777 B]
+[2KGet:82 http://us.archive.ubuntu.com precise-backports/restricted i386 Packages [20 B]
+[2KGet:83 http://us.archive.ubuntu.com precise-backports/universe i386 Packages [45.9 kB]
+[2KGet:84 http://us.archive.ubuntu.com precise-backports/multiverse i386 Packages [5176 B]
+[2KGet:85 http://us.archive.ubuntu.com precise-backports/main TranslationIndex [72 B]
+[2KGet:86 http://us.archive.ubuntu.com precise-backports/multiverse TranslationIndex [72 B]
+[2KGet:87 http://us.archive.ubuntu.com precise-backports/restricted TranslationIndex [70 B]
+[2KGet:88 http://us.archive.ubuntu.com precise-backports/universe TranslationIndex [73 B]
+[2KGet:89 http://us.archive.ubuntu.com precise/main Translation-en [893 kB]
+[2KGet:90 http://us.archive.ubuntu.com precise/multiverse Translation-en [112 kB]
+[2KGet:91 http://us.archive.ubuntu.com precise/restricted Translation-en [2018 B]
+[2KGet:92 http://us.archive.ubuntu.com precise/universe Translation-en [4133 kB]
+[2KGet:93 http://us.archive.ubuntu.com precise-updates/main Translation-en [391 kB]
+[2KGet:94 http://us.archive.ubuntu.com precise-updates/multiverse Translation-en [8468 B]
+[2KGet:95 http://us.archive.ubuntu.com precise-updates/restricted Translation-en [2083 B]
+[2KGet:96 http://us.archive.ubuntu.com precise-updates/universe Translation-en [168 kB]
+[2KGet:97 http://us.archive.ubuntu.com precise-backports/main Translation-en [4104 B]
+[2KGet:98 http://us.archive.ubuntu.com precise-backports/multiverse Translation-en [4269 B]
+[2KGet:99 http://us.archive.ubuntu.com precise-backports/restricted Translation-en [20 B]
+[2KGet:100 http://us.archive.ubuntu.com precise-backports/universe Translation-en [29.9 kB]
+[2KFetched 53.5 MB in 1min 26s (621 kB/s)
+Reading package lists...[2K
+[2KReading package lists...[2K
+[2KBuilding dependency tree...[2K
+[2KSuggested packages:
+  spell
+[2KThe following NEW packages will be installed:
+  nano
+[2K0 upgraded, 1 newly installed, 0 to remove and 43 not upgraded.
+Need to get 194 kB of archives.
+After this operation, 618 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu/ precise/main nano amd64 2.2.6-1 [194 kB]
+[2K[91mdebconf: delaying package configuration, since apt-utils is not installed
+[0m[2KFetched 194 kB in 0s (545 kB/s)
+[2KSelecting previously unselected package nano.
+[2K(Reading database ... [2K7546 files and directories currently installed.)
+[2KUnpacking nano (from .../nano_2.2.6-1_amd64.deb) ...
+[2KSetting up nano (2.2.6-1) ...
+[2Kupdate-alternatives: using /bin/nano to provide /usr/bin/editor (editor) in auto mode.
+[2Kupdate-alternatives: using /bin/nano to provide /usr/bin/pico (pico) in auto mode.
+[2KFinished running titanium-base-container create event
+[2K ---> 430cc44f97a2
+[2KSuccessfully built 430cc44f97a2
+Finished building Container(titanium-base-13)
